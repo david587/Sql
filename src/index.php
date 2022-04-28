@@ -17,9 +17,15 @@ if($result = $con->query($sql)){//eltároljuk az adatokat,megnézzük hogy jó e
     echo "nme ok";
 }
 
+echo "<table>";
 while($row = $result->fetch_assoc()){ //fetch ->kiszedjük az adatok belőle->miylen módón->1sor 1 row
-echo $row["nev"];
+    echo "<tr>";
+    echo "<td>". $row["az"]. "</td>";
+    echo "<td>". $row["nev"]. "</td>";
+    echo "<td>". $row["telepules"]. "</td>";
+    echo "<td>". $row["fizetes"]. "</td>";
+    echo "</tr>";
 }
-
+echo "</table>";
 
 $con->close();
